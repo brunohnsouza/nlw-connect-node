@@ -1,28 +1,26 @@
-POST http://localhost:3333/subscriptions
+@host = localhost:3333
+
+### Subscribe to event
+POST http://{{host}}/subscriptions
 Content-Type: application/json
 
 {
-    "name": "Usuário Indicado 3",
-    "email": "testeusuarioindicado3@gmail.com",
-    "referrer": "f03803f7-b677-40fe-8f4d-1c5c8ea0bb11"
+  "name": "Invited",
+  "email": "invited@rocketseat.team",
+  "referrer": "3cc72c15-34b5-4933-b6bf-854ac97dd60d"
 }
 
-### 
+### Access invite link
+GET http://{{host}}/invites/4b7b21d9-2b3a-4146-89a0-60467275ae6a
 
-GET http://localhost:3333/invites/8573f998-78bc-47d1-a313-1748057a4579
+### Get subscriber invites clicks
+GET http://{{host}}/subscribers/3cc72c15-34b5-4933-b6bf-854ac97dd60d/ranking/clicks
 
-###
+### Get subscriber invites count
+GET http://{{host}}/subscribers/3cc72c15-34b5-4933-b6bf-854ac97dd60d/ranking/count
 
-GET http://localhost:3333/subscribers/8573f998-78bc-47d1-a313-1748057a4579/ranking/clicks
+### Get subscriber ranking position
+GET http://{{host}}/subscribers/3cc72c15-34b5-4933-b6bf-854ac97dd60d/ranking/position
 
-###
-
-GET http://localhost:3333/subscribers/8573f998-78bc-47d1-a313-1748057a4579/ranking/count
-
-###
-
-GET http://localhost:3333/subscribers/8573f998-78bc-47d1-a313-1748057a4579/ranking/position
-
-###
-
-GET http://localhost:3333/ranking
+### Get ranking
+GET http://{{host}}/ranking
