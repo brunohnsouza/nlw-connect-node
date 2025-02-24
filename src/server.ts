@@ -22,7 +22,7 @@ app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
 
 app.register(fastifyCors, {
-  origin: 'https://nlwconnectdevstage.vercel.app/',
+  origin: 'https://nlwconnectdevstage.vercel.app',
 })
 
 app.register(fastifySwagger, {
