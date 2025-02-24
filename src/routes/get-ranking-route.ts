@@ -1,7 +1,6 @@
 import type { FastifyPluginAsyncZod } from 'fastify-type-provider-zod'
 import z from 'zod'
 import { getRanking } from '../functions/get-ranking'
-import { getSubscriberInvitesCount } from '../functions/get-subscriber-invites-count'
 
 export const getRankingRoute: FastifyPluginAsyncZod = async app => {
   app.get(
@@ -23,7 +22,7 @@ export const getRankingRoute: FastifyPluginAsyncZod = async app => {
         },
       },
     },
-    async request => {
+    async () => {
       const { rankingWithScore } = await getRanking()
 
       return {
